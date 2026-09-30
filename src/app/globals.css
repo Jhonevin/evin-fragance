@@ -3,3 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --color-background: #0a0a0f;
+  --color-surface: #13131a;
+  --color-surface-secondary: #1c1c24;
+  --color-primary: #d4af37;
+  --color-primary-hover: #b8952e;
+  --color-text: #f5f5f0;
+  --color-text-secondary: #a1a1aa;
+  --color-border: #2a2a35;
+  --color-success: #4ade80;
+  --color-error: #f87171;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), serif;
+}
