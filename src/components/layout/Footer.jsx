@@ -1,3 +1,4 @@
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -12,6 +13,7 @@ export default function Footer() {
         <div>
           <h4>Enlaces rápidos</h4>
           <a href="/">Inicio</a>
+          <a href="/tienda">Tienda</a>
           <a href="/ofertas">Ofertas</a>
           <a href="/nosotros">Nosotros</a>
           <a href="/contacto">Contacto</a>
@@ -22,6 +24,16 @@ export default function Footer() {
           <a href="/faq">Preguntas frecuentes</a>
           <a href="/envios">Envíos y devoluciones</a>
           <a href="/privacidad">Política de privacidad</a>
+        </div>
+
+        <div>
+          <h4>Síguenos en</h4>
+          <div className={styles.socials}>
+            <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="#" aria-label="Instagram"><FaInstagram /></a>
+            <a href="#" aria-label="TikTok"><FaTiktok /></a>
+            <a href="#" aria-label="YouTube"><FaYoutube /></a>
+          </div>
         </div>
 
         <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -39,9 +40,11 @@ export default function Header() {
         </form>
 
         <div className={styles.actions}>
-          <a href="/favoritos">Favoritos</a>
+          <a href="/favoritos" className={styles.actionLink}>
+            <FiHeart /> Favoritos
+          </a>
           <a href="/carrito" className={styles.cartLink}>
-            Carrito
+            <FiShoppingCart /> Carrito
             <span className={styles.cartCount}>0</span>
           </a>
         </div>
