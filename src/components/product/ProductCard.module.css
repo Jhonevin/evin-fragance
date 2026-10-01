@@ -43,7 +43,24 @@
 .nombre { font-weight: 600; margin-bottom: 2px; }
 .marca { color: var(--color-text-secondary); font-size: 0.85rem; margin-bottom: var(--space-xs); }
 .rating { font-size: 0.8rem; color: var(--color-primary); margin-bottom: var(--space-xs); }
-.precio { font-weight: 700; font-size: 1.1rem; margin-bottom: var(--space-sm); }
+
+.precioRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.precio {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.precioAnterior {
+  text-decoration: line-through;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
 
 .addButton {
   background: transparent;

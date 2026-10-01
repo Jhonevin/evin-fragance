@@ -1,0 +1,31 @@
+.main {
+  padding: var(--space-lg);
+}
+
+.breadcrumbs {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.subtitulo {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.vacio {
+  color: var(--color-text-secondary);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
