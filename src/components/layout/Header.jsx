@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [busqueda, setBusqueda] = useState("");
+  const router = useRouter();
+
+  function manejarBusqueda(evento) {
+    evento.preventDefault();
+    if (busqueda.trim() === "") return;
+    router.push(`/buscar?q=${encodeURIComponent(busqueda.trim())}`);
+  }
 
   return (
     <header className={styles.header}>
@@ -26,7 +34,7 @@ export default function Header() {
           <span className={styles.tagline}>Tu esencia, tu estilo</span>
         </a>
 
-        <form className={styles.searchForm}>
+        <form className={styles.searchForm} onSubmit={manejarBusqueda}>
           <input
             type="text"
             placeholder="Buscar fragancias, marcas..."

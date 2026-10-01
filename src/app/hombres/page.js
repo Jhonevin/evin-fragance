@@ -1,7 +1,7 @@
 import { productos } from "@/data/products";
-import CatalogGrid from "@/components/product/CatalogGrid";
+import CatalogView from "@/components/product/CatalogView";
 
 export default function Hombres() {
   const filtrados = productos.filter((p) => p.categoria === "hombres");
-  return <CatalogGrid titulo="Hombres" productos={filtrados} />;
+  return <CatalogView titulo="Hombres" productos={filtrados} />;
 }
