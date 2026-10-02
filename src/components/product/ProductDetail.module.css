@@ -111,3 +111,13 @@
   color: var(--color-text);
   cursor: pointer;
 }
+
+.favButtonActivo {
+  background: var(--color-primary);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: var(--color-background);
+  cursor: pointer;
+}

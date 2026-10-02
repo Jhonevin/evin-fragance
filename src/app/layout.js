@@ -2,6 +2,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { FavoritesProvider } from "@/context/FavoritesContext";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={`${playfair.variable} ${inter.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <FavoritesProvider>
+          <Header />
+          {children}
+          <Footer />
+        </FavoritesProvider>
       </body>
     </html>
   );

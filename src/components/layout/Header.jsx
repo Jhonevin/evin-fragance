@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
+import { useFavoritos } from "@/context/FavoritesContext";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [busqueda, setBusqueda] = useState("");
   const router = useRouter();
+  const { favoritos } = useFavoritos();
 
   function manejarBusqueda(evento) {
     evento.preventDefault();
@@ -50,6 +52,7 @@ export default function Header() {
         <div className={styles.actions}>
           <a href="/favoritos" className={styles.actionLink}>
             <FiHeart /> Favoritos
+            {favoritos.length > 0 && <span className={styles.favCount}>{favoritos.length}</span>}
           </a>
           <a href="/carrito" className={styles.cartLink}>
             <FiShoppingCart /> Carrito

@@ -122,3 +122,15 @@
   align-items: center;
   gap: var(--space-xs);
 }
+
+.favCount {
+  background: var(--color-primary);
+  color: var(--color-background);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

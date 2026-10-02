@@ -82,3 +82,17 @@
   color: inherit;
   display: block;
 }
+
+.favButtonActivo {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: var(--color-primary);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  color: var(--color-background);
+  cursor: pointer;
+  z-index: 1;
+}
