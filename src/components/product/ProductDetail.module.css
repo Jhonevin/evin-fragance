@@ -1,0 +1,113 @@
+.main { padding: var(--space-lg); max-width: 1100px; margin: 0 auto; }
+.breadcrumbs { color: var(--color-text-secondary); font-size: 0.85rem; margin-bottom: var(--space-lg); }
+.breadcrumbs a { color: var(--color-text-secondary); text-decoration: none; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.mainImage {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+.thumbnails { display: flex; gap: var(--space-sm); margin-top: var(--space-sm); }
+.thumbnail {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.marca { color: var(--color-text-secondary); font-size: 0.9rem; }
+.nombre { font-size: 2rem; margin-bottom: var(--space-xs); }
+.concentracion { color: var(--color-text-secondary); margin-bottom: var(--space-xs); }
+.rating { color: var(--color-primary); margin-bottom: var(--space-md); }
+.descripcion { color: var(--color-text-secondary); margin-bottom: var(--space-lg); line-height: 1.5; }
+
+.piramide { margin-bottom: var(--space-lg); }
+.piramide h3 { font-size: 1rem; margin-bottom: var(--space-sm); }
+
+.notasGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.notaTitulo { color: var(--color-primary); font-size: 0.8rem; margin-bottom: var(--space-xs); }
+.notaLista { font-size: 0.85rem; color: var(--color-text-secondary); }
+
+.volumenLabel { font-size: 0.9rem; margin-bottom: var(--space-sm); }
+.volumenOpciones { display: flex; gap: var(--space-sm); margin-bottom: var(--space-md); }
+
+.volumenBoton, .volumenActivo {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.volumenBoton {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.volumenActivo {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-background);
+}
+
+.precio { font-size: 1.8rem; font-weight: 700; margin-bottom: var(--space-xs); }
+.disponibilidad { color: var(--color-success); font-size: 0.85rem; margin-bottom: var(--space-lg); }
+
+.acciones { display: flex; align-items: center; gap: var(--space-sm); }
+
+.cantidadSelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.cantidadSelector button {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  width: 32px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.cantidadSelector span { width: 32px; text-align: center; }
+
+.agregarButton {
+  flex: 1;
+  background: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.favButton {
+  background: var(--color-surface-secondary);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text);
+  cursor: pointer;
+}

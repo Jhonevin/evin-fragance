@@ -76,3 +76,9 @@
   background: var(--color-primary);
   color: var(--color-background);
 }
+
+.linkArea {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

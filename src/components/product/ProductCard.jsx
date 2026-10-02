@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ producto }) {
@@ -12,19 +13,19 @@ export default function ProductCard({ producto }) {
       {producto.badge && <span className={styles.badge}>{producto.badge}</span>}
       <button className={styles.favButton} aria-label="Agregar a favoritos">♡</button>
 
-      <div className={styles.imageWrapper}>
-        <Image src={producto.imagen} alt={producto.nombre} fill style={{ objectFit: "contain" }} />
-      </div>
-
-      <div className={styles.info}>
+      <Link href={`/producto/${producto.id}`} className={styles.linkArea}>
+        <div className={styles.imageWrapper}>
+          <Image src={producto.imagen} alt={producto.nombre} fill style={{ objectFit: "contain" }} />
+        </div>
         <p className={styles.nombre}>{producto.nombre}</p>
         <p className={styles.marca}>{producto.marca}</p>
+      </Link>
+
+      <div className={styles.info}>
         <p className={styles.rating}>★ {producto.rating} ({producto.reviews})</p>
         <div className={styles.precioRow}>
           <p className={styles.precio}>${precioFormateado}</p>
-          {precioAnteriorFormateado && (
-            <p className={styles.precioAnterior}>${precioAnteriorFormateado}</p>
-          )}
+          {precioAnteriorFormateado && <p className={styles.precioAnterior}>${precioAnteriorFormateado}</p>}
         </div>
         <button className={styles.addButton}>Agregar al carrito</button>
       </div>
