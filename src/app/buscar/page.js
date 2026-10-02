@@ -1,8 +1,9 @@
 import { productos } from "@/data/products";
 import CatalogGrid from "@/components/product/CatalogGrid";
 
-export default function Buscar({ searchParams }) {
-  const query = (searchParams?.q || "").toLowerCase().trim();
+export default async function Buscar({ searchParams }) {
+  const params = await searchParams;
+  const query = (params?.q || "").toLowerCase().trim();
 
   const resultados = query
     ? productos.filter(
