@@ -4,12 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { useFavoritos } from "@/context/FavoritesContext";
+import { useCarrito } from "@/context/CartContext";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [busqueda, setBusqueda] = useState("");
   const router = useRouter();
   const { favoritos } = useFavoritos();
+  const { totalItems } = useCarrito();
 
   function manejarBusqueda(evento) {
     evento.preventDefault();
@@ -56,7 +58,7 @@ export default function Header() {
           </a>
           <a href="/carrito" className={styles.cartLink}>
             <FiShoppingCart /> Carrito
-            <span className={styles.cartCount}>0</span>
+            <span className={styles.cartCount}>{totalItems}</span>
           </a>
         </div>
       </div>

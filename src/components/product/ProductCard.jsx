@@ -3,15 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useFavoritos } from "@/context/FavoritesContext";
+import { useCarrito } from "@/context/CartContext";
 import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ producto }) {
   const { esFavorito, toggleFavorito } = useFavoritos();
+  const { agregarAlCarrito } = useCarrito();
   const precioFormateado = new Intl.NumberFormat("es-CO").format(producto.precio);
   const precioAnteriorFormateado = producto.precioAnterior
     ? new Intl.NumberFormat("es-CO").format(producto.precioAnterior)
     : null;
   const favorito = esFavorito(producto.id);
+
+  function manejarAgregar(e) {
+    e.preventDefault(); // evita que el click dispare el Link
+    const mlPorDefecto = producto.volumenes?.[0]?.ml ?? null;
+    agregarAlCarrito(producto, mlPorDefecto, 1);
+  }
 
   return (
     <div className={styles.card}>
@@ -38,7 +46,9 @@ export default function ProductCard({ producto }) {
           <p className={styles.precio}>${precioFormateado}</p>
           {precioAnteriorFormateado && <p className={styles.precioAnterior}>${precioAnteriorFormateado}</p>}
         </div>
-        <button className={styles.addButton}>Agregar al carrito</button>
+        <button className={styles.addButton} onClick={manejarAgregar}>
+          Agregar al carrito
+        </button>
       </div>
     </div>
   );

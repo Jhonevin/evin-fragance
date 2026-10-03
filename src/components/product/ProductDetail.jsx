@@ -4,10 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useFavoritos } from "@/context/FavoritesContext";
+import { useCarrito } from "@/context/CartContext";
 import styles from "./ProductDetail.module.css";
 
 export default function ProductDetail({ producto }) {
   const { esFavorito, toggleFavorito } = useFavoritos();
+  const { agregarAlCarrito } = useCarrito();
   const favorito = esFavorito(producto.id);
   const [volumenSeleccionado, setVolumenSeleccionado] = useState(
     producto.volumenes[producto.volumenes.length - 1]
@@ -17,6 +19,10 @@ export default function ProductDetail({ producto }) {
   const precioFormateado = new Intl.NumberFormat("es-CO").format(
     volumenSeleccionado.precio
   );
+
+  function manejarAgregarAlCarrito() {
+    agregarAlCarrito(producto, volumenSeleccionado.ml, cantidad);
+  }
 
   return (
     <main className={styles.main}>
@@ -90,7 +96,9 @@ export default function ProductDetail({ producto }) {
               <span>{cantidad}</span>
               <button onClick={() => setCantidad((c) => c + 1)}>+</button>
             </div>
-            <button className={styles.agregarButton}>Agregar al carrito</button>
+            <button className={styles.agregarButton} onClick={manejarAgregarAlCarrito}>
+              Agregar al carrito
+            </button>
             <button
               className={favorito ? styles.favButtonActivo : styles.favButton}
               onClick={() => toggleFavorito(producto.id)}
@@ -104,4 +112,3 @@ export default function ProductDetail({ producto }) {
     </main>
   );
 }
-
